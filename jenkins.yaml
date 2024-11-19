@@ -1,0 +1,15 @@
+jenkins: 
+  tools:
+    jdk:
+      installations:
+      - name: "JDK 17"
+        home: "usr/lib/java-17-openjdk"
+    nodejs:
+      installations:
+      - name: "Node 16"
+        home: "usr/local/bin/node"
+    OWASP Dependency-Check:
+      installations:
+        - name: "DP-Check"
+          home: "usr/local/bin/DP-Check"
+    

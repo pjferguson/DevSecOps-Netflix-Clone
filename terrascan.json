@@ -1,0 +1,434 @@
+{
+  "results": {
+    "scan_errors": [
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public/assets",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public/assets' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/animate",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/animate' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/animate/variants",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/animate/variants' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/animate/variants/fade",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/animate/variants/fade' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/animate/variants/zoom",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/animate/variants/zoom' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/layouts",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/layouts' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/slick-slider",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/slick-slider' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/watch",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/components/watch' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/constant",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/constant' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/hoc",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/hoc' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/hooks",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/hooks' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/layouts",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/layouts' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/lib",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/lib' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/pages",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/pages' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/providers",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/providers' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/routes",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/routes' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/store",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/store' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/store/slices",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/store/slices' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/theme",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/theme' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/types",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/types' has no terraform config files"
+      },
+      {
+        "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/utils",
+        "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/src/utils' has no terraform config files"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/.terraform/providers/registry.terraform.io/hashicorp/aws/5.76.0/darwin_arm64",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/.terraform/providers/registry.terraform.io/hashicorp/aws/5.76.0/darwin_arm64/LICENSE.txt', err: unsupported extension for file /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/.terraform/providers/registry.terraform.io/hashicorp/aws/5.76.0/darwin_arm64/LICENSE.txt"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes/deployment.yml', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes/deployment.yml"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes/node-service.yaml', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes/node-service.yaml"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes/service.yml', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes/service.yml"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/package.json', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/package.json"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/pipeline.txt', err: unsupported extension for file /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/pipeline.txt"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public/manifest.json', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public/manifest.json"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public/robots.txt', err: unsupported extension for file /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/public/robots.txt"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/terrascan.json', err: error while resolving intrinsic functions, error invalid JSON: unexpected end of JSON input"
+      },
+      {
+        "iac_type": "arm",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/terrascan.json'. err: unable to parse file /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/terrascan.json"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/tsconfig.json', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/tsconfig.json"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/tsconfig.node.json', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/tsconfig.node.json"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/vercel.json', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/vercel.json"
+      },
+      {
+        "iac_type": "kustomize",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "kustomization.y(a)ml file not found in the directory /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone"
+      },
+      {
+        "iac_type": "helm",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "no helm charts found in directory /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone"
+      }
+    ],
+    "violations": [
+      {
+        "rule_name": "privilegeEscalationCheck",
+        "description": "Containers Should Not Run with AllowPrivilegeEscalation",
+        "rule_id": "AC_K8S_0085",
+        "severity": "HIGH",
+        "category": "Compliance Validation",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "imageWithoutDigest",
+        "description": "Image without digest affects the integrity principle of image security",
+        "rule_id": "AC_K8S_0069",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "securityContextUsed",
+        "description": "Apply Security Context to Your Pods and Containers",
+        "rule_id": "AC_K8S_0064",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "runAsNonRootCheck",
+        "description": "Minimize Admission of Root Containers",
+        "rule_id": "AC_K8S_0087",
+        "severity": "HIGH",
+        "category": "Identity and Access Management",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "MemorylimitsCheck",
+        "description": "Memory Limits Not Set in config file.",
+        "rule_id": "AC_K8S_0100",
+        "severity": "MEDIUM",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "nodePort",
+        "description": "Nodeport service can expose the worker nodes as they have public interface",
+        "rule_id": "AC_K8S_0111",
+        "severity": "LOW",
+        "category": "Infrastructure Security",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_service",
+        "file": "Kubernetes/service.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "nodePort",
+        "description": "Nodeport service can expose the worker nodes as they have public interface",
+        "rule_id": "AC_K8S_0111",
+        "severity": "LOW",
+        "category": "Infrastructure Security",
+        "resource_name": "node-exporter",
+        "resource_type": "kubernetes_service",
+        "file": "Kubernetes/node-service.yaml",
+        "line": 1
+      },
+      {
+        "rule_name": "appArmorProfile",
+        "description": "AppArmor profile not set to default or custom profile will make the container vulnerable to kernel level threats",
+        "rule_id": "AC_K8S_0073",
+        "severity": "MEDIUM",
+        "category": "Identity and Access Management",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "CpulimitsCheck",
+        "description": "CPU Limits Not Set in config file.",
+        "rule_id": "AC_K8S_0098",
+        "severity": "MEDIUM",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "readOnlyFileSystem",
+        "description": "Container images with readOnlyRootFileSystem set as false mounts the container root file system with write permissions",
+        "rule_id": "AC_K8S_0078",
+        "severity": "MEDIUM",
+        "category": "Identity and Access Management",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "nolivenessProbe",
+        "description": "No liveness probe will ensure there is no recovery in case of unexpected errors",
+        "rule_id": "AC_K8S_0070",
+        "severity": "LOW",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "MemoryRequestsCheck",
+        "description": "Memory Request Not Set in config file.",
+        "rule_id": "AC_K8S_0099",
+        "severity": "MEDIUM",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "noReadinessProbe",
+        "description": "No readiness probe will affect automatic recovery in case of unexpected errors",
+        "rule_id": "AC_K8S_0072",
+        "severity": "LOW",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "imageWithLatestTag",
+        "description": "No tag or container image with :Latest tag makes difficult to rollback and track",
+        "rule_id": "AC_K8S_0068",
+        "severity": "LOW",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "CpuRequestsCheck",
+        "description": "CPU Request Not Set in config file.",
+        "rule_id": "AC_K8S_0097",
+        "severity": "MEDIUM",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "secCompProfile",
+        "description": "Default seccomp profile not enabled will make the container to make non-essential system calls",
+        "rule_id": "AC_K8S_0080",
+        "severity": "MEDIUM",
+        "category": "Identity and Access Management",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "cloud-sec",
+        "resource_type": "aws_vpc",
+        "module_name": "root",
+        "file": "infra.tf",
+        "plan_root": "./",
+        "line": 15
+      },
+      {
+        "rule_name": "ec2UsingIMDSv1",
+        "description": "EC2 instances should disable IMDS or require IMDSv2 as this can be related to the weaponization phase of kill chain",
+        "rule_id": "AC_AWS_0479",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "netflix-machine",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "infra.tf",
+        "plan_root": "./",
+        "line": 54
+      },
+      {
+        "rule_name": "detailedMonitoringEnabledInstance",
+        "description": "Ensure that detailed monitoring is enabled for EC2 instances.",
+        "rule_id": "AC_AWS_0480",
+        "severity": "HIGH",
+        "category": "Logging and Monitoring",
+        "resource_name": "netflix-machine",
+        "resource_type": "aws_instance",
+        "module_name": "root",
+        "file": "infra.tf",
+        "plan_root": "./",
+        "line": 54
+      }
+    ],
+    "skipped_violations": null,
+    "scan_summary": {
+      "file/folder": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+      "iac_type": "docker,terraform,k8s",
+      "scanned_at": "2024-11-17 14:09:10.089811 +0000 UTC",
+      "policies_validated": 207,
+      "violated_policies": 19,
+      "low": 6,
+      "medium": 10,
+      "high": 3
+    }
+  }
+}
