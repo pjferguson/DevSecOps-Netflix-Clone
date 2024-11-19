@@ -68,11 +68,39 @@ resource "aws_instance" "netflix-machine" {
     subnet_id = aws_subnet.main.id
     associate_public_ip_address = true
     vpc_security_group_ids = [aws_security_group.default-sec.id]
-    user_data <<-EOF
+    user_data = <<-EOF
         #!/bin/bash
         file("${path.module}/script.sh")
         echo "Let's start docker!"
         docker build --build-arg TMDB_V3_API_EKY="${var.key}" -t netflix .
+        api_key="${var.key}"
+        DOCKERUSER="${var.dockerus}"
+        DOCKER_ACCESS_TOKEN="${var.access}"
+        # Let's get this new container scanned
+        image_id=$(docker ps --format "{{.Image}}" | head -n 1)
+        trivy image $image_id
+        # installation of python3, which will be used to run python script that will grab the sonarqube token. 
+        sudo apt-get install python3.10
+        # installation of postgresql
+        sudo apt install postgresql
+        sudo -i -u postgres
+        createuser sonar
+        db=$(createdb sonar)
+        psql -d $db -c "ALTER USER sonar WITH ENCRYPTED PASSWORD '${var.sonarpw}';
+        GRANT ALL PRIVILEGES ON DATABASE sonar TO sonar
+        GRANT ALL ON SCHEMA public TO sonar;
+        GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO sonar;
+        GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO sonar;
+        GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO sonar;
+        GRANT USAGE ON SCHEMA public TO sonar;
+        GRANT CREATE ON SCHEMA public TO sonar;"
+        exit
+        exit
+        echo "local   sonar           sonar                                   scram-sha-256" >> /etc/postgresql/16/main/pg_hba.conf"
+        file("${path.module}/sonartoken.py)
+        file("${path.module}/sonar.sh")
+        EOF
+
 
 }
 

@@ -13,8 +13,8 @@
 terrascan -o json > terrascan.json
 ```
 ### Sonar Script
-- As part of this project, I focused on automating operational taks by creating a script that simplifies the installation and configuration of SonarQube and its dependcies. The ['sonar.sh](./sonar.sh) script also configures a systemd service for easy management. 
-Before running the [`sonar.sh`](./sonar.sh) script, make sure the following requirements are met:
+- As part of this project, I focused on automating operational taks by creating a script that simplifies the installation and configuration of SonarQube and its dependcies. The [`sonar.sh`](./sonar.sh) script also configures a systemd service for easy management. 
+- Before running the [`sonar.sh`](./sonar.sh) script, make sure the following requirements are met:
 
 - A **Linux-based server** (e.g., Ubuntu, CentOS, or other modern distributions).
 - **Sudo or root privileges** to install software and configure services.
@@ -31,12 +31,26 @@ cd DevSecOps-Netflix-Clone
 chmod 755 sonar.sh
 sudo ./sonar.sh
 ```
+**Verify installation**:
+```bash
+sudo systemctl status sonarqube
+```
+- Great Resource to learn more about the installation and set up process: (devsecblueprint)[https://www.devsecblueprint.com/projects/devsecops-home-lab/installation-and-configuration/security-tools/install-config-sonarqube]
 
+### Jenkins Configuration as Code
+- According to (Jenkins)[https://www.jenkins.io/doc/book/managing/casc/] "Jenkins Configuration as Code (JCasC) feature defines Jenkins configuration parameters in a human-readable YAML file that can be stored as source code."
+- This provides me with the convenience and flexibility of configuring Global Tools using code. 
+- The (Configuration as Code)[https://plugins.jenkins.io/configuration-as-code/] Plugin must be installed to progammatically make these changes.
+- Checkout (`jenkins.yaml`)[jenkins.yaml] to check out some of the configuration tools required for this project. Including OWASP Dependcy Check, JDK(17), NodeJs(16). 
+### Pipeline as Code
+🚧 **This is a work in progress. Please check back later for updates.**
 
 
 ### Current Status
 - Terraform file under maintenance. 
-- Sonar.sh has finishing touches being applied. 
+- Sonar.sh has finishing touches being applied.
+- Creating pipeline Jenkinsfile
+- Designing python script to fetch sonarqube token, no need to use GUI when I can API calls. 
 
 ### Summary 
 🚧 **This is a work in progress. Please check back later for updates.**
