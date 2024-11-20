@@ -35,13 +35,13 @@ sudo ./sonar.sh
 ```bash
 sudo systemctl status sonarqube
 ```
-- Great Resource to learn more about the installation and set up process: (devsecblueprint)[https://www.devsecblueprint.com/projects/devsecops-home-lab/installation-and-configuration/security-tools/install-config-sonarqube]
+- Great Resource to learn more about the installation and set up process: [The DevSec Blueprint](https://www.devsecblueprint.com/projects/devsecops-home-lab/installation-and-configuration/security-tools/install-config-sonarqube)
 
 ### Jenkins Configuration as Code
-- According to (Jenkins)[https://www.jenkins.io/doc/book/managing/casc/] "Jenkins Configuration as Code (JCasC) feature defines Jenkins configuration parameters in a human-readable YAML file that can be stored as source code."
+- According to [Jenkins](https://www.jenkins.io/doc/book/managing/casc/) "Jenkins Configuration as Code (JCasC) feature defines Jenkins configuration parameters in a human-readable YAML file that can be stored as source code."
 - This provides me with the convenience and flexibility of configuring Global Tools using code. 
-- The (Configuration as Code)[https://plugins.jenkins.io/configuration-as-code/] Plugin must be installed to progammatically make these changes.
-- Checkout (`jenkins.yaml`)[jenkins.yaml] to check out some of the configuration tools required for this project. Including OWASP Dependcy Check, JDK(17), NodeJs(16). 
+- The [Configuration as Code](https://plugins.jenkins.io/configuration-as-code/) Plugin must be installed to progammatically make these changes.
+- Checkout [jenkins.yaml](./jenkins.yaml) to check out some of the configuration tools required for this project. Including OWASP Dependcy Check, JDK(17), NodeJs(16). 
 ### Pipeline as Code
 🚧 **This is a work in progress. Please check back later for updates.**
 
