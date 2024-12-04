@@ -83,7 +83,7 @@ resource "aws_internet_gateway" "default-gw" {
 
 resource "aws_key_pair" "management" {
     key_name = "netflix"
-    public_key = file("${path.module}/netflix.pub")
+    public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAv0ROfSCA6etxl3HWuxnMeS0v9Hp/tyVNwtDNDNr7Xh promyseferguson@MacBook-Pro.local"
 }
 
 resource "aws_instance" "netflix-machine" {
@@ -93,29 +93,9 @@ resource "aws_instance" "netflix-machine" {
     subnet_id = aws_subnet.main.id
     associate_public_ip_address = true
     vpc_security_group_ids = ["${aws_security_group.default-sec.id}"]
-    user_data = <<-EOF
-        #!/bin/bash
-        ${file("${path.module}/script.sh")}
-        echo "Let's start docker!"
-        docker build --build-arg TMDB_V3_API_KEY="${var.key}" -t netflix .
-        api_key="${var.key}"
-        DOCKERUSER="${var.dockerus}"
-        DOCKER_ACCESS_TOKEN="${var.access}"
-        # Let's get this new container scanned
-        image_id=$(docker ps --format "{{.Image}}" | head -n 1)
-        trivy image $image_id
-        EOF
+    user_data = file("${path.module}/script.sh")
       
-    # connection {
-    #   type = "ssh"
-    #   user = "ubuntu"
-    #   private_key = file("${path.module}/netflix")
-    #   host = self.public_ip
-    # }
-    # provisioner "file" {
-    #   source = "docker-compose.yml"
-    #   destination = "/var/lib/docker"
-    #     }
+    
 }
 
 output "machine-ip" {
