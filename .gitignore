@@ -64,4 +64,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 *Jenkinsfile
-*netflix
+netflix.pub
+netflix.pem
