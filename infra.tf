@@ -1,10 +1,11 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
-      version = "~>5.0"
+      source  = "hashicorp/aws"
+        version = "5.79.0"
     }
   }
+
 # creating a backend to manage state files.
 # using a backend to prevent secrets from being commited to git repo. 
   cloud {
@@ -20,7 +21,7 @@ terraform {
 
 
 provider "aws" {
-    region = "us-east-2"
+
 }
 
 resource "aws_vpc" "cloud-sec" {
@@ -35,6 +36,18 @@ resource "aws_subnet" "main" {
     }
 
 }
+resource "aws_route_table" "routes" {
+  vpc_id = aws_vpc.cloud-sec.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.default-gw.id
+  }
+
+}
+resource "aws_route_table_association" "public_subnet" {
+  subnet_id = aws_subnet.main.id
+  route_table_id = aws_route_table.routes.id
+}
 
 resource "aws_security_group" "default-sec" {
     description = "Creating security group for AWS project environment."
@@ -42,68 +55,69 @@ resource "aws_security_group" "default-sec" {
 
 }
 # creating a rule to allow outbound traffic for instances within VPC. 
-resource "aws_vpc_security_group_egress_rule" "allow_outbound_traffic" {
+resource "aws_security_group_rule" "allow_outbound_traffic" {
+    type = "egress"
     security_group_id = aws_security_group.default-sec.id
-    cidr_ipv4 = "0.0.0.0/0"
-    ip_protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
 
 }
-resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
+# This should never be a rule in a production environment. 
+resource "aws_security_group_rule" "allow_ssh" {
+    type = "ingress"
     security_group_id = aws_security_group.default-sec.id
-    cidr_ipv4 = "0.0.0.0/0"
+    cidr_blocks = ["0.0.0.0/0"]
     from_port = 22
-    ip_protocol = "tcp"
     to_port = 22
+    protocol = "tcp"
 
 }
 
-resource "aws_key_pair" "netflix-key" {
-    public_key = pathexpand("~/.ssh/id_rsa.pub")
+resource "aws_internet_gateway" "default-gw" {
+  vpc_id = aws_vpc.cloud-sec.id
+}
+
+
+
+resource "aws_key_pair" "management" {
+    key_name = "netflix"
+    public_key = file("${path.module}/netflix.pub")
 }
 
 resource "aws_instance" "netflix-machine" {
     ami = "ami-05803413c51f242b7"
     instance_type = "t2.micro"
-    key_name = aws_key_pair.netflix-key.id
+    key_name = aws_key_pair.management.key_name
     subnet_id = aws_subnet.main.id
     associate_public_ip_address = true
-    vpc_security_group_ids = [aws_security_group.default-sec.id]
+    vpc_security_group_ids = ["${aws_security_group.default-sec.id}"]
     user_data = <<-EOF
         #!/bin/bash
-        file("${path.module}/script.sh")
+        ${file("${path.module}/script.sh")}
         echo "Let's start docker!"
-        docker build --build-arg TMDB_V3_API_EKY="${var.key}" -t netflix .
+        docker build --build-arg TMDB_V3_API_KEY="${var.key}" -t netflix .
         api_key="${var.key}"
         DOCKERUSER="${var.dockerus}"
         DOCKER_ACCESS_TOKEN="${var.access}"
         # Let's get this new container scanned
         image_id=$(docker ps --format "{{.Image}}" | head -n 1)
         trivy image $image_id
-        # installation of python3, which will be used to run python script that will grab the sonarqube token. 
-        sudo apt-get install python3.10
-        # installation of postgresql
-        sudo apt install postgresql
-        sudo -i -u postgres
-        createuser sonar
-        db=$(createdb sonar)
-        psql -d $db -c "ALTER USER sonar WITH ENCRYPTED PASSWORD '${var.sonarpw}';
-        GRANT ALL PRIVILEGES ON DATABASE sonar TO sonar
-        GRANT ALL ON SCHEMA public TO sonar;
-        GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO sonar;
-        GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO sonar;
-        GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO sonar;
-        GRANT USAGE ON SCHEMA public TO sonar;
-        GRANT CREATE ON SCHEMA public TO sonar;"
-        exit
-        exit
-        echo "local   sonar           sonar                                   scram-sha-256" >> /etc/postgresql/16/main/pg_hba.conf"
-        file("${path.module}/sonartoken.py)
-        file("${path.module}/sonar.sh")
         EOF
-
-
+      
+    # connection {
+    #   type = "ssh"
+    #   user = "ubuntu"
+    #   private_key = file("${path.module}/netflix")
+    #   host = self.public_ip
+    # }
+    # provisioner "file" {
+    #   source = "docker-compose.yml"
+    #   destination = "/var/lib/docker"
+    #     }
 }
 
- output "machine-ip" {
-        value = aws_instance.netflix-machine.public_ip
-    }
+output "machine-ip" {
+      value = aws_instance.netflix-machine.public_ip
+        }

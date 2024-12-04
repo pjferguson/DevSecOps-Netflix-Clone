@@ -1,7 +1,11 @@
 # DevSecOps on AWS
 ![Open Source License](https://img.shields.io/badge/License-MIT-blue)
-![SonarQube](https://img.shields.io/badge/SonarQube-blue)
-![Application Security](https://img.shields.io/badge/AppSec-blue)
+![SonarQube](https://img.shields.io/badge/SonarQube-black?style=for-the-badge&logo=sonarqube&logoColor=4E9BCD)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff)](#)
+[![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=fff)](#)
+![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
+
+
 
 ### My First Steps
 - The first thing I have done is created a script that be ran upon deployment of EC2 instance. This script will install tools and services needed for the project (SonarQube, Jenkins, Grafana). 

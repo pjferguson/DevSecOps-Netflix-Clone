@@ -5,11 +5,7 @@ variable "key" {
 
 }
 
-variable "sonarpw" {
-    type = string
-    description = "Sonar postgres user password"
-    sensitive = true
-}
+
 
 variable "dockerus" {
     type = string
@@ -22,3 +18,4 @@ variable "access" {
     description = "access token"
     sensitive = true
  }
+
