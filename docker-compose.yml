@@ -1,7 +1,22 @@
 version: "3"
 
 services:
-  sonarqube:
+  jenkins: 
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - ./plugins.txt:/usr/share/jenkins/ref/plugins.txt
+    command: > 
+     bash -c "cd /usr/share/jenkins/ref && jenkins-plugin-cli --plugin-file plugins.txt && /usr/local/bin/jenkins.sh"
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+    restart: always
+  sonar:
     image: sonarqube:lts-community
     depends_on:
       - sonar_db
@@ -36,5 +51,6 @@ volumes:
   sonarqube_temp:
   sonar_db:
   sonar_db_data:
+  jenkins_home:
 
   

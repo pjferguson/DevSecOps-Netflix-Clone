@@ -3,6 +3,11 @@
     "scan_errors": [
       {
         "iac_type": "terraform",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "diagnostic errors while loading terraform config dir '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone'. error from terraform:\n/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/infra.tf:11,3-8: Unsupported block type; Blocks of type \"cloud\" are not expected here.\n"
+      },
+      {
+        "iac_type": "terraform",
         "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes",
         "errMsg": "directory '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/Kubernetes' has no terraform config files"
       },
@@ -128,8 +133,8 @@
       },
       {
         "iac_type": "cft",
-        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/.terraform/providers/registry.terraform.io/hashicorp/aws/5.76.0/darwin_arm64",
-        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/.terraform/providers/registry.terraform.io/hashicorp/aws/5.76.0/darwin_arm64/LICENSE.txt', err: unsupported extension for file /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/.terraform/providers/registry.terraform.io/hashicorp/aws/5.76.0/darwin_arm64/LICENSE.txt"
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/.terraform/providers/registry.terraform.io/hashicorp/aws/5.79.0/darwin_arm64",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/.terraform/providers/registry.terraform.io/hashicorp/aws/5.79.0/darwin_arm64/LICENSE.txt', err: unsupported extension for file /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/.terraform/providers/registry.terraform.io/hashicorp/aws/5.79.0/darwin_arm64/LICENSE.txt"
       },
       {
         "iac_type": "cft",
@@ -149,12 +154,27 @@
       {
         "iac_type": "cft",
         "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/docker-compose.yml', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/docker-compose.yml"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/jenkins.yaml', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/jenkins.yaml"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
         "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/package.json', err: failed to find valid Resources key in file: /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/package.json"
       },
       {
         "iac_type": "cft",
         "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
         "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/pipeline.txt', err: unsupported extension for file /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/pipeline.txt"
+      },
+      {
+        "iac_type": "cft",
+        "directory": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
+        "errMsg": "error while loading iac file '/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/plugins.txt', err: unsupported extension for file /Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone/plugins.txt"
       },
       {
         "iac_type": "cft",
@@ -204,33 +224,11 @@
     ],
     "violations": [
       {
-        "rule_name": "privilegeEscalationCheck",
-        "description": "Containers Should Not Run with AllowPrivilegeEscalation",
-        "rule_id": "AC_K8S_0085",
-        "severity": "HIGH",
-        "category": "Compliance Validation",
-        "resource_name": "netflix-app",
-        "resource_type": "kubernetes_deployment",
-        "file": "Kubernetes/deployment.yml",
-        "line": 1
-      },
-      {
-        "rule_name": "imageWithoutDigest",
-        "description": "Image without digest affects the integrity principle of image security",
-        "rule_id": "AC_K8S_0069",
-        "severity": "MEDIUM",
-        "category": "Infrastructure Security",
-        "resource_name": "netflix-app",
-        "resource_type": "kubernetes_deployment",
-        "file": "Kubernetes/deployment.yml",
-        "line": 1
-      },
-      {
-        "rule_name": "securityContextUsed",
-        "description": "Apply Security Context to Your Pods and Containers",
-        "rule_id": "AC_K8S_0064",
-        "severity": "MEDIUM",
-        "category": "Infrastructure Security",
+        "rule_name": "noReadinessProbe",
+        "description": "No readiness probe will affect automatic recovery in case of unexpected errors",
+        "rule_id": "AC_K8S_0072",
+        "severity": "LOW",
+        "category": "Security Best Practices",
         "resource_name": "netflix-app",
         "resource_type": "kubernetes_deployment",
         "file": "Kubernetes/deployment.yml",
@@ -248,11 +246,88 @@
         "line": 1
       },
       {
+        "rule_name": "CpuRequestsCheck",
+        "description": "CPU Request Not Set in config file.",
+        "rule_id": "AC_K8S_0097",
+        "severity": "MEDIUM",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "imageWithLatestTag",
+        "description": "No tag or container image with :Latest tag makes difficult to rollback and track",
+        "rule_id": "AC_K8S_0068",
+        "severity": "LOW",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "securityContextUsed",
+        "description": "Apply Security Context to Your Pods and Containers",
+        "rule_id": "AC_K8S_0064",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "nolivenessProbe",
+        "description": "No liveness probe will ensure there is no recovery in case of unexpected errors",
+        "rule_id": "AC_K8S_0070",
+        "severity": "LOW",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
         "rule_name": "MemorylimitsCheck",
         "description": "Memory Limits Not Set in config file.",
         "rule_id": "AC_K8S_0100",
         "severity": "MEDIUM",
         "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "privilegeEscalationCheck",
+        "description": "Containers Should Not Run with AllowPrivilegeEscalation",
+        "rule_id": "AC_K8S_0085",
+        "severity": "HIGH",
+        "category": "Compliance Validation",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "MemoryRequestsCheck",
+        "description": "Memory Request Not Set in config file.",
+        "rule_id": "AC_K8S_0099",
+        "severity": "MEDIUM",
+        "category": "Security Best Practices",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "secCompProfile",
+        "description": "Default seccomp profile not enabled will make the container to make non-essential system calls",
+        "rule_id": "AC_K8S_0080",
+        "severity": "MEDIUM",
+        "category": "Identity and Access Management",
         "resource_name": "netflix-app",
         "resource_type": "kubernetes_deployment",
         "file": "Kubernetes/deployment.yml",
@@ -281,9 +356,31 @@
         "line": 1
       },
       {
+        "rule_name": "imageWithoutDigest",
+        "description": "Image without digest affects the integrity principle of image security",
+        "rule_id": "AC_K8S_0069",
+        "severity": "MEDIUM",
+        "category": "Infrastructure Security",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
         "rule_name": "appArmorProfile",
         "description": "AppArmor profile not set to default or custom profile will make the container vulnerable to kernel level threats",
         "rule_id": "AC_K8S_0073",
+        "severity": "MEDIUM",
+        "category": "Identity and Access Management",
+        "resource_name": "netflix-app",
+        "resource_type": "kubernetes_deployment",
+        "file": "Kubernetes/deployment.yml",
+        "line": 1
+      },
+      {
+        "rule_name": "readOnlyFileSystem",
+        "description": "Container images with readOnlyRootFileSystem set as false mounts the container root file system with write permissions",
+        "rule_id": "AC_K8S_0078",
         "severity": "MEDIUM",
         "category": "Identity and Access Management",
         "resource_name": "netflix-app",
@@ -303,94 +400,17 @@
         "line": 1
       },
       {
-        "rule_name": "readOnlyFileSystem",
-        "description": "Container images with readOnlyRootFileSystem set as false mounts the container root file system with write permissions",
-        "rule_id": "AC_K8S_0078",
-        "severity": "MEDIUM",
-        "category": "Identity and Access Management",
-        "resource_name": "netflix-app",
-        "resource_type": "kubernetes_deployment",
-        "file": "Kubernetes/deployment.yml",
-        "line": 1
-      },
-      {
-        "rule_name": "nolivenessProbe",
-        "description": "No liveness probe will ensure there is no recovery in case of unexpected errors",
-        "rule_id": "AC_K8S_0070",
-        "severity": "LOW",
-        "category": "Security Best Practices",
-        "resource_name": "netflix-app",
-        "resource_type": "kubernetes_deployment",
-        "file": "Kubernetes/deployment.yml",
-        "line": 1
-      },
-      {
-        "rule_name": "MemoryRequestsCheck",
-        "description": "Memory Request Not Set in config file.",
-        "rule_id": "AC_K8S_0099",
-        "severity": "MEDIUM",
-        "category": "Security Best Practices",
-        "resource_name": "netflix-app",
-        "resource_type": "kubernetes_deployment",
-        "file": "Kubernetes/deployment.yml",
-        "line": 1
-      },
-      {
-        "rule_name": "noReadinessProbe",
-        "description": "No readiness probe will affect automatic recovery in case of unexpected errors",
-        "rule_id": "AC_K8S_0072",
-        "severity": "LOW",
-        "category": "Security Best Practices",
-        "resource_name": "netflix-app",
-        "resource_type": "kubernetes_deployment",
-        "file": "Kubernetes/deployment.yml",
-        "line": 1
-      },
-      {
-        "rule_name": "imageWithLatestTag",
-        "description": "No tag or container image with :Latest tag makes difficult to rollback and track",
-        "rule_id": "AC_K8S_0068",
-        "severity": "LOW",
-        "category": "Security Best Practices",
-        "resource_name": "netflix-app",
-        "resource_type": "kubernetes_deployment",
-        "file": "Kubernetes/deployment.yml",
-        "line": 1
-      },
-      {
-        "rule_name": "CpuRequestsCheck",
-        "description": "CPU Request Not Set in config file.",
-        "rule_id": "AC_K8S_0097",
-        "severity": "MEDIUM",
-        "category": "Security Best Practices",
-        "resource_name": "netflix-app",
-        "resource_type": "kubernetes_deployment",
-        "file": "Kubernetes/deployment.yml",
-        "line": 1
-      },
-      {
-        "rule_name": "secCompProfile",
-        "description": "Default seccomp profile not enabled will make the container to make non-essential system calls",
-        "rule_id": "AC_K8S_0080",
-        "severity": "MEDIUM",
-        "category": "Identity and Access Management",
-        "resource_name": "netflix-app",
-        "resource_type": "kubernetes_deployment",
-        "file": "Kubernetes/deployment.yml",
-        "line": 1
-      },
-      {
-        "rule_name": "vpcFlowLogsNotEnabled",
-        "description": "Ensure VPC flow logging is enabled in all VPCs",
-        "rule_id": "AC_AWS_0369",
-        "severity": "LOW",
-        "category": "Logging and Monitoring",
-        "resource_name": "cloud-sec",
-        "resource_type": "aws_vpc",
+        "rule_name": "port22OpenToInternet",
+        "description": "Security Groups - Unrestricted Specific Ports - (SSH,22)",
+        "rule_id": "AC_AWS_0227",
+        "severity": "HIGH",
+        "category": "Infrastructure Security",
+        "resource_name": "allow_ssh",
+        "resource_type": "aws_security_group_rule",
         "module_name": "root",
         "file": "infra.tf",
         "plan_root": "./",
-        "line": 15
+        "line": 68
       },
       {
         "rule_name": "ec2UsingIMDSv1",
@@ -403,7 +423,7 @@
         "module_name": "root",
         "file": "infra.tf",
         "plan_root": "./",
-        "line": 54
+        "line": 89
       },
       {
         "rule_name": "detailedMonitoringEnabledInstance",
@@ -416,19 +436,32 @@
         "module_name": "root",
         "file": "infra.tf",
         "plan_root": "./",
-        "line": 54
+        "line": 89
+      },
+      {
+        "rule_name": "vpcFlowLogsNotEnabled",
+        "description": "Ensure VPC flow logging is enabled in all VPCs",
+        "rule_id": "AC_AWS_0369",
+        "severity": "LOW",
+        "category": "Logging and Monitoring",
+        "resource_name": "cloud-sec",
+        "resource_type": "aws_vpc",
+        "module_name": "root",
+        "file": "infra.tf",
+        "plan_root": "./",
+        "line": 27
       }
     ],
     "skipped_violations": null,
     "scan_summary": {
       "file/folder": "/Users/promyseferguson/DevSecOps/DevSecOps-Netflix-Clone",
-      "iac_type": "docker,terraform,k8s",
-      "scanned_at": "2024-11-17 14:09:10.089811 +0000 UTC",
+      "iac_type": "terraform,docker,k8s",
+      "scanned_at": "2024-12-05 03:10:26.406632 +0000 UTC",
       "policies_validated": 207,
-      "violated_policies": 19,
+      "violated_policies": 20,
       "low": 6,
       "medium": 10,
-      "high": 3
+      "high": 4
     }
   }
 }
