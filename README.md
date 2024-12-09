@@ -60,13 +60,13 @@ pip install jenkins api
 
 
 ### 7. **Additional Docs**
-## Jenkins Configuration as Code
+#### Jenkins Configuration as Code
 - According to [Jenkins](https://www.jenkins.io/doc/book/managing/casc/), the "Jenkins Configuration as Code (JCasC) feature defines Jenkins configuration parameters in a human-readable YAML file that can be stored as source code."
 - This gives me the convenience and flexibility of configuring Global Tools using code. 
 - The [Configuration as Code](https://plugins.jenkins.io/configuration-as-code/) Plugin must be installed to make these changes programmatically.
 - Jenkins file: [Jenkins](./Jenkinsfile)
 
-### Yarn Audit Analyzer 
+#### Yarn Audit Analyzer 
 - Yarn is one of the leading JavaScript package managers; this is specific to the Node.js Javascript runtime environment. 
 ```bash 
 yarn audit
@@ -74,7 +74,7 @@ yarn audit
 - Here is a great place to start for more advanced commands: [nodejs-security](https://www.nodejs-security.com/blog/how-to-use-yarn-audit) 
 
 
-### Grafana and Prometheus 
+#### Grafana and Prometheus 
 - I ran Prometheus in a Docker container to maximize system resource capabilities. 
 - Integration Documentation: [prometheus and grafana](https://www.linode.com/docs/guides/how-to-install-prometheus-and-grafana-on-ubuntu/)
 
