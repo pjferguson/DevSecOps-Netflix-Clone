@@ -1,17 +1,11 @@
-# DevSecOps on AWS
+# DevSecOps AWS
 
 
 
 
 ### My First Steps
-- The first thing I configured is a cript that be ran upon deployment of EC2 instance. 
-- Next, I decided to configure my AWS environment using IaC (Terraform), this template allows for automation when deploying resources in the future. 
-- I want to my sure that my Terraform file does not have any vulnerabilities that I may not be aware of, so I decided to use Terrascan. 
-- Terrascan can be used to detect compliance and security violations across IaC, mitigating risk before provisioning cloud native infrastructure. More information on Terrascan: [Terrascan Docs](https://runterrascan.io/docs/getting-started/)
-- Returned the output in JSON format for readiblity by running the command: 
-```bash 
-terrascan -o json > terrascan.json
-```
+- The first thing I configured is a script that exectutes upon deployment of the EC2 instance. 
+- Next, I decided to configure my AWS environment using IaC (Terraform); this template allows for automation when deploying resources in the future. 
 ### 1. **Script for EC2 Instance Setup**
 - The project includes a shell script [script.sh](`./aws-environment/script.sh`) that automates the installation of essential services and tools on an EC2 instance. This script configures the necessary monitoring tools and Docker environment. It performs the following steps:
 
@@ -20,7 +14,7 @@ terrascan -o json > terrascan.json
 - Clones the [DevSecOps-Netflix-Clone repository](https://github.com/pjferguson/DevSecOps-Netflix-Clone).
 - Creates a system user `promonitoring` for Prometheus monitoring.
 - Installs **Grafana**, configures it to start on boot, and enables necessary services.
-- This can be ran in your environment: 
+- This can be run in your environment: 
 ``` bash
 git clone https://github.com/pjferguson/DevSecOps-Netflix-Clone
 cd DevSecOps-Netflix-Clone
@@ -36,27 +30,27 @@ sudo script.sh
 
 
 ### 3. **Security Scanning with Terrascan**
-- Terraform files must be deployed with security by default. To ensure that my IaC is free from vulnerabilities I am using terrascan. Terrascan checks code against best practices, and security policies. 
-- Checkout [terrascan.json](./terrascan.json) to see the details. 
-- Scan your IaC:
-``` bash
-terrscan scan -o json > terrascan.json 
+- Terraform IaC files should be deployed with security by default. To ensure that my IaC is free from vulnerabilities, I am using Terrascan. Terrascan checks the code against best practices and security policies. 
+- Terrascan can detect compliance and security violations across IaC, mitigating risk before provisioning cloud-native infrastructure. More information on Terrascan: [Terrascan Docs](https://runterrascan.io/docs/getting-started/)
+- Returned the output in JSON format for readiblity by running the command: 
+```bash 
+terrascan -o json > terrascan.json
 ```
 ### 4. **Docker-Compose**
-- Developed a Docker compose file, this tool allows me to define and run multi-container applications. Streamlimes deployment. 
+- Developed a Docker compose file, allowing me to define and run multi-container applications. Streamlines deployment. 
 - Comprehensible YAML file [docker-compose](./docker-services/docker-compose.yml)
-- This file contains three containers, SonarQube, PostgreSQL, and Jenkins. 
-- Start all of services: 
+- This file contains three containers: SonarQube, PostgreSQL, and Jenkins. 
+- Start all of the services: 
 ``` bash 
-docker compose up
+docker-compose up
 ```
 - Learn more about SonarQube here: [The DevSec Blueprint](https://www.devsecblueprint.com/projects/devsecops-home-lab/installation-and-configuration/security-tools/install-config-sonarqube)
 
 ### 5. **Services Configuration**
-- After logging into my EC2 instance via ssh, I decided to run a trivy scan. Trivy is an open source vulnerability management tool that can help developers shift left, implementing security at the begining of the software develpment lifecycle. 
+- After logging into my EC2 instance via ssh, I decided to run a trivy scan. Trivy is an open-source vulnerability management tool that can help developers shift left, implementing security at the beginning of the software development lifecycle. 
 
 ### 6. **Python Scripts**
-- To enforce my grasp for understanding of automation with Jenkins, I created a script that uses the JenkinsAPI. This script allows operations teams to gain insight on different server metrics, rather it be build issues, change control, or plugin version management.  File to reference: [PyJenkins](./python-scripts/jenkins.py)
+- To enforce my grasp and understanding of automation with Jenkins, I created a script that uses the Jenkins API. This script allows operations teams to gain insight into different server metrics- build issues, change control, or plugin version management. File to reference: [PyJenkins](./python-scripts/jenkins.py)
 ```bash
 # Install dependencies in virtual env
 python -m venv /path/to/virtual-env
@@ -67,16 +61,16 @@ pip install jenkins api
 
 ### 7. **Additional Docs**
 ## Jenkins Configuration as Code
-- According to [Jenkins](https://www.jenkins.io/doc/book/managing/casc/) "Jenkins Configuration as Code (JCasC) feature defines Jenkins configuration parameters in a human-readable YAML file that can be stored as source code."
-- This provides me with the convenience and flexibility of configuring Global Tools using code. 
-- The [Configuration as Code](https://plugins.jenkins.io/configuration-as-code/) Plugin must be installed to progammatically make these changes.
+- According to [Jenkins](https://www.jenkins.io/doc/book/managing/casc/), the "Jenkins Configuration as Code (JCasC) feature defines Jenkins configuration parameters in a human-readable YAML file that can be stored as source code."
+- This gives me the convenience and flexibility of configuring Global Tools using code. 
+- The [Configuration as Code](https://plugins.jenkins.io/configuration-as-code/) Plugin must be installed to make these changes programmatically.
 - Jenkins file: [Jenkins](./Jenkinsfile)
 
 ## Pipeline as Code
 🚧 **This is a work in progress. Please check back later for updates.**
 
 ## Yarn Audit Analyzer 
-- Yarn is one of the main JavaScript package managers, this is specific to the Node.js Javascript runtime environment. 
+- Yarn is one of the leading JavaScript package managers; this is specific to the Node.js Javascript runtime environment. 
 ```bash 
 yarn audit
 ```
@@ -84,14 +78,14 @@ yarn audit
 
 
 ## Grafana and Prometheus 
-- To maximize system resource capabilities I ran Prometheus in a Docker container. 
+- I ran Prometheus in a Docker container to maximize system resource capabilities. 
 - Integration Documentation: [prometheus and grafana](https://www.linode.com/docs/guides/how-to-install-prometheus-and-grafana-on-ubuntu/)
 
 
 ### Summary 
-- During this project, I successfully deployed and secured a mock Netflix application on AWS, leveraging Terraform for infrastructure provisioning. Focusing on the "shift left" security approach gave me valuable insights into detecting vulnerabilities early in the development lifecycle. Implementing tools like Terrascan and Trivy allowed me to identify security risks within the IaC, while the setup of a Jenkins pipeline provided real-time visibility into the security health of the application repository.
+- During this project, I successfully deployed and secured a mock Netflix application on AWS, leveraging Terraform for infrastructure provisioning. Focusing on the "shift left" security approach gave me valuable insights into detecting vulnerabilities early in the development lifecycle. Implementing tools like Terrascan and Trivy allowed me to identify security risks within the IaC. At the same time, the setup of a Jenkins pipeline provided real-time visibility into the security health of the application repository.
 
-- Going forward I will continue to build my skillset in the automation of securing cloud infrastructure and services.
+- In the future, I will continue to build my skillset in the automation of securing cloud infrastructure and services.
 
 
 ### License
