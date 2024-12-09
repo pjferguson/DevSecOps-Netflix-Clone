@@ -66,10 +66,7 @@ pip install jenkins api
 - The [Configuration as Code](https://plugins.jenkins.io/configuration-as-code/) Plugin must be installed to make these changes programmatically.
 - Jenkins file: [Jenkins](./Jenkinsfile)
 
-## Pipeline as Code
-🚧 **This is a work in progress. Please check back later for updates.**
-
-## Yarn Audit Analyzer 
+### Yarn Audit Analyzer 
 - Yarn is one of the leading JavaScript package managers; this is specific to the Node.js Javascript runtime environment. 
 ```bash 
 yarn audit
@@ -77,12 +74,12 @@ yarn audit
 - Here is a great place to start for more advanced commands: [nodejs-security](https://www.nodejs-security.com/blog/how-to-use-yarn-audit) 
 
 
-## Grafana and Prometheus 
+### Grafana and Prometheus 
 - I ran Prometheus in a Docker container to maximize system resource capabilities. 
 - Integration Documentation: [prometheus and grafana](https://www.linode.com/docs/guides/how-to-install-prometheus-and-grafana-on-ubuntu/)
 
 
-### Summary 
+# Summary 
 - During this project, I successfully deployed and secured a mock Netflix application on AWS, leveraging Terraform for infrastructure provisioning. Focusing on the "shift left" security approach gave me valuable insights into detecting vulnerabilities early in the development lifecycle. Implementing tools like Terrascan and Trivy allowed me to identify security risks within the IaC. At the same time, the setup of a Jenkins pipeline provided real-time visibility into the security health of the application repository.
 
 - In the future, I will continue to build my skillset in the automation of securing cloud infrastructure and services.
