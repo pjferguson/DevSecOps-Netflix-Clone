@@ -1,4 +1,4 @@
-## DevSecOps with - Terraform, and Jenkins
+## DevSecOps with - Terraform & Jenkins
 
 
 
