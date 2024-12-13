@@ -1,4 +1,4 @@
-# DevSecOps with - Terraform, Python, and Bash
+## DevSecOps with - Terraform, and Jenkins
 
 
 
@@ -79,7 +79,7 @@ yarn audit
 - Integration Documentation: [prometheus and grafana](https://www.linode.com/docs/guides/how-to-install-prometheus-and-grafana-on-ubuntu/)
 
 
-# Summary 
+## Summary 
 - During this project, I successfully deployed and secured a mock Netflix application on AWS, leveraging Terraform for infrastructure provisioning. Focusing on the "shift left" security approach gave me valuable insights into detecting vulnerabilities early in the development lifecycle. Implementing tools like Terrascan and Trivy allowed me to identify security risks within the IaC. At the same time, the setup of a Jenkins pipeline provided real-time visibility into the security health of the application repository.
 
 - In the future, I will continue to build my skillset in the automation of securing cloud infrastructure and services.
